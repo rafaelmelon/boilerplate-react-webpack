@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.jsx'
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -23,6 +23,9 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
