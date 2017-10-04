@@ -7,7 +7,6 @@ module.exports = {
   entry: {
     app: './src/index.jsx'
   },
-  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Boilerplate',
@@ -20,10 +19,6 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-  },
-  devServer: {
-    contentBase: './dist',
-    hot: true
   },
   resolve: {
     extensions: ['.js', '.jsx']

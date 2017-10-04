@@ -9,11 +9,30 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Production'
+      title: 'Boilerplate',
+      template: path.join(__dirname, 'src', 'index.html'),
+      filename: 'index.html'
     })
   ],
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?/,
+        use: ['babel-loader'],
+        exclude: /(node_modules|bower_components)/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader','css-loader'],
+        exclude: /(node_modules|bower_components)/,
+      }
+    ]
   }
 };
