@@ -7,7 +7,14 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 loaders.push({
   test: /\.scss$/,
-  loader: ExtractTextPlugin.extract({fallback: 'style-loader', use : 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
+  loader: ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    use: [
+      { loader: 'css-loader', options: { sourceMap: true, localIdentName: '[path][name]__[local]--[hash:base64:5]' } },
+      { loader: 'sass-loader', options: { sourceMap: true }
+      }
+    ]
+  }),
   exclude: ['node_modules']
 });
 

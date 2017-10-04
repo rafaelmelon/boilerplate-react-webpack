@@ -10,7 +10,12 @@ const PORT = process.env.PORT || "8888";
 
 loaders.push({
   test: /\.scss$/,
-  loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
+  use: [
+    { loader: "style-loader" },
+    { loader: 'css-loader', options: { importLoaders: 1 } },
+    { loader: "sass-loader" },
+    { loader: 'postcss-loader',options: { config: { path: path.join(__dirname, 'postcss.config') } } }
+  ],
   exclude: ['node_modules']
 });
 
