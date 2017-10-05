@@ -3,12 +3,12 @@
   "version": "0.0.2",
   "description": "React Webpack Babel",
   "main": "index.js",
-  "author": "Rafael Melón",
+  "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
   "license": "MIT",
   "scripts": {
     "watch": "webpack --progress --watch",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --progress --profile --colors"
+    "start": "webpack-dev-server --progress --profile --colors --open"
   },
   "dependencies": {
     "node-sass": "^4.5.3",

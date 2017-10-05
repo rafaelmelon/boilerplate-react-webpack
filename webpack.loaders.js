@@ -6,8 +6,11 @@ module.exports = [
   },
   {
     test: /\.css$/,
-    loaders: ['style-loader', 'css-loader?importLoaders=1'],
-    exclude: ['node_modules']
+    exclude: ['node_modules'],
+    use: [
+      { loader: "style-loader" },
+      { loader: 'css-loader', options: { importLoaders: 1 } }
+    ]
   },
   {
     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -22,26 +25,36 @@ module.exports = [
   {
     test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
     exclude: /(node_modules|bower_components)/,
-    loader: "url-loader?limit=10000&mimetype=application/octet-stream"
+    use: [
+      { loader: 'url-loader', options: { limit: 10000, mimetype: 'application/octet-stream' } }
+    ]
   },
   {
     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
     exclude: /(node_modules|bower_components)/,
-    loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+    use: [
+      { loader: 'url-loader', options: { limit: 10000, mimetype: 'image/svg+xml' } }
+    ]
   },
   {
     test: /\.gif/,
     exclude: /(node_modules|bower_components)/,
-    loader: "url-loader?limit=10000&mimetype=image/gif"
+    use: [
+      { loader: 'url-loader', options: { limit: 10000, mimetype: 'image/gif' } }
+    ]
   },
   {
     test: /\.jpg/,
     exclude: /(node_modules|bower_components)/,
-    loader: "url-loader?limit=10000&mimetype=image/jpg"
+    use: [
+      { loader: 'url-loader', options: { limit: 10000, mimetype: 'image/jpg' } }
+    ]
   },
   {
     test: /\.png/,
     exclude: /(node_modules|bower_components)/,
-    loader: "url-loader?limit=10000&mimetype=image/png"
+    use: [
+      { loader: 'url-loader', options: { limit: 10000, mimetype: 'image/png' } }
+    ]
   }
 ];
