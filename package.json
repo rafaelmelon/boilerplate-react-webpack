@@ -1,10 +1,14 @@
 {
   "name": "boilerplate-react-webpack",
   "version": "0.0.2",
-  "description": "React Webpack Babel",
+  "description": "A complete boilerplate with React and Webpack config",
   "main": "index.js",
   "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rafaelmelon/boilerplate-react-webpack.git"
+  },
   "scripts": {
     "watch": "webpack --progress --watch",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
